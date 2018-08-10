@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormFields from '../widgets/Forms/formFields';
+import { database } from '../firebase';
 
 class User extends Component {
 
@@ -97,7 +98,13 @@ class User extends Component {
         }
 
         if(formIsValid) {
-            console.log(dataToSubmit);
+            database.ref('users').push(dataToSubmit)
+                .then(() => {
+                    console.log('New user added');
+                })
+                .catch((e) => {
+                    console.log(e);
+                })
         }
     }
 
