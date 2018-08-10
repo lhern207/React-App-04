@@ -1,13 +1,5 @@
 import * as firebase from 'firebase';
-
-const config = {
-    apiKey: "AIzaSyC3t9iwTYCEGIEL3hWc_0D4ojA9EqDiaHM",
-    authDomain: "forms-test-d117f.firebaseapp.com",
-    databaseURL: "https://forms-test-d117f.firebaseio.com",
-    projectId: "forms-test-d117f",
-    storageBucket: "forms-test-d117f.appspot.com",
-    messagingSenderId: "261378517967"
-};
+import config from './config';
 
 firebase.initializeApp(config);
 const database = firebase.database();
